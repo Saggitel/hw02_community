@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}  
+  Главная страница проекта Yatube {{tittle}}
+{% endblock %}
+{% block content %}
+  <main>
+  <div class="container py-5">
+    <h1>{{text}}</h1>
+    <article>
+        {% if post.group %}   
+          <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+        {% endif %}     
+        {% if not forloop.last %}<hr>{% endif %} 
+    <article>
+  </div>
+  {% endblock %}

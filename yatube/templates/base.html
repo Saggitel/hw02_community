@@ -1,0 +1,22 @@
+<!-- templates/base.html -->
+<!DOCTYPE html> 
+<html lang="ru">          
+  <head>
+    {% block title %}
+    <title>{{ title }}</title>
+    {% endblock %}    
+  </head>
+  <body>       
+    <header>
+      {% include 'includes/header.html' %}
+      {{text}}
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      {% include 'includes/footer.html' %} 
+    </footer>
+  </body>
+</html> 

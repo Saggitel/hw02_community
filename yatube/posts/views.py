@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Group
+from .models import Group, Post
 
 
 def index(request):
-    posts = Post.objects.order_by('-pub_date')[:10]
+    amount = 10
+    posts = Post.objects.order_by('-pub_date')[:amount]
     context = {
         'posts': posts,
     }
